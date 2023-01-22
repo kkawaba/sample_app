@@ -27,10 +27,20 @@ textarea {
 .center {
   text-align: center;
   h1 {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
 }
 
+.btn-border {
+  border: 2px solid #000;
+  border-radius: 0;
+  background: #fff;
+}
+
+.btn-border:hover {
+  color: #fff;
+  background: #000;
+}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -38,27 +48,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+  padding-top: 30px;
+  font-size: 6em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  font-family: arial black;
 }
 
 h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $gray-light;
+  font-size: 2em;
+  letter-spacing: -2px;
+  margin-bottom: 5px;
+  font-family: arial black;
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+h3 {
+  font-size: 1.5em;
+  letter-spacing: -2px;
+  margin-bottom: 5px;
+  font-family: arial black;
 }
-
-
 /* header */
 
 #logo {

@@ -12,23 +12,14 @@
       </section>
     </aside>
     <div class="col-md-8">
-      <h3>みんなの投稿</h3>
+      <h3>Micropost Feed</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
-  <div class="center jumbotron">
-    <h1>Welcome to the ブックレ</h1>
-
-    <h2>
-      This is the home page for the
-      <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
-      sample application.
-    </h2>
-
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <div class="center">
+    <h1>BookReport</h1>
+    <%= link_to "Sign up", signup_path, class: "btn btn-border btn-default btn-lg" %>
+    <%=image_tag("free_books.jpg", alt: "Rails logo", width: "100%", vspace: "30px") %>
   </div>
-
-  <%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200px"),
-              "https://rubyonrails.org/" %>
 <% end %>

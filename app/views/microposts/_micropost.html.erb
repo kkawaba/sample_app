@@ -1,20 +1,27 @@
 <li id="micropost-<%= micropost.id %>">
-  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
-  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-  <span class="title"><%= micropost.title %></span>
-  <span class="author"><%= micropost.author %></span>
-  <span class="content">
-    <%= micropost.content %>
-    <% if micropost.image.attached? %>
-      <%= image_tag micropost.image.variant(:display) %>
-    <% end %>
-    <%= image_tag micropost.image if micropost.image.attached? %>
-  </span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-    <% if current_user?(micropost.user) %>
-      <%= link_to "delete", micropost, data: { "turbo-method": :delete,
-                                               turbo_confirm: "You sure?" } %>
-    <% end %>
-  </span>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="thumbnail">
+        <% if micropost.image.attached? %>
+              <%= image_tag micropost.image.variant(:display) %>
+            <% end %>
+        <div class="caption">
+          <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
+          <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+          <h2><span class="title"><%= micropost.title %></span></h2>
+          <h3><span class="author"><%= micropost.author %></span></h3>
+          <p><span class="content">
+            <%= micropost.content %>
+          </span>
+          <span class="timestamp">
+            Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+            <% if current_user?(micropost.user) %>
+              <%= link_to "delete", micropost, data: { "turbo-method": :delete,
+                                                        turbo_confirm: "You sure?" } %>
+            <% end %>
+          </span></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </li>
